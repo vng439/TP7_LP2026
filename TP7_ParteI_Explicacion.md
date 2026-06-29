@@ -1,5 +1,5 @@
 ## Ejercicio 6 - valorAbsoluto
-```
+```haskell
 valorAbsoluto :: Float -> Float
 valorAbsoluto x
 | x < 0     = -x
@@ -25,7 +25,7 @@ La firma Float -> Float indica que la función recibe un valor de tipo Float y d
 
 
 ## Ejercicio 7 – signo
-```
+```haskell
 signo :: Float -> Int
 signo x
     | x < 0 = -1
@@ -54,7 +54,7 @@ La firma `Float -> Int` indica que la función recibe un número real y devuelve
 La lógica de la función depende de condiciones que determinan cuál de los tres resultados posibles debe retornarse, cumpliendo exactamente con la definición matemática de la función signo.
 
 ## Ejercicio 8 – maximo
-```
+```haskell
 maximo :: Int -> Int -> Int
 maximo x y =
     if x > y
@@ -85,7 +85,7 @@ La función recibe sus parámetros de forma separada (`Int -> Int -> Int`) en lu
 
 ## Ejercicio 9 – max3
 
-```
+```haskell
 maximo :: Int -> Int -> Int
 maximo x y =
 if x > y
@@ -102,7 +102,7 @@ La función recibe tres números enteros y devuelve el mayor de ellos. Para reso
 
 Primero se compara el primer número con el segundo mediante `maximo a b`, obteniendo el mayor de ambos. Luego, ese resultado se compara con el tercer número mediante una nueva llamada a `maximo`. El resultado final corresponde al mayor de los tres valores recibidos.
 
-Por ejemplo: `max3 4 8 6`
+Por ejemplo: haskell `max3 4 8 6`
 
 1. `maximo 4 8` devuelve `8`.
 2. `maximo 8 6` devuelve `8`.
@@ -131,7 +131,7 @@ La función recibe los parámetros de forma separada, característica propia de 
 
 ## Ejercicio 10 – max4 (Forma 1)
 
-```
+```haskell
 maximo :: Int -> Int -> Int
 maximo x y =
     if x > y
@@ -177,7 +177,7 @@ Los parámetros se reciben de forma separada, siguiendo el modelo de funciones c
 
 ## Ejercicio 10 – max4 (Forma 2)
 
-```
+```haskell
 maximo :: Int -> Int -> Int
 maximo x y =
     if x > y
@@ -227,7 +227,7 @@ Ambas tienen la misma funcionalidad y complejidad. La primera resulta más visua
 
 ## Ejercicio 12 – ordenar3
 
-```
+```haskell
 ordenar3 :: Int -> Int -> Int -> (Int, Int, Int)
 ordenar3 a b c
 a <= b && b <= c = (a,b,c)
@@ -273,7 +273,7 @@ El problema se resuelve analizando todas las posibles relaciones de orden entre 
 
 
 ## Ejercicio 14 – Funciones booleanas (Not, And, Or y Xor)
-
+```haskell
 miNot :: Bool -> Bool
 miNot True = False
 miNot False = True
@@ -297,7 +297,7 @@ miAnd2 x y =
     if x == True && y == True
        then True
        else False
-
+```
 
 Se implementaron las funciones booleanas básicas `Not`, `And`, `Or` y `Xor` sin utilizar las versiones predefinidas de Haskell. Además, se realizó una comparación entre dos implementaciones de la función `And`: una utilizando *Pattern Matching* y otra utilizando una expresión condicional tradicional.
 
@@ -331,7 +331,7 @@ La implementación tradicional de `miAnd2` utiliza el operador lógico `&&` para
 ### Comparación entre Pattern Matching e implementación tradicional
 
 La función `miAnd` utiliza *Pattern Matching*, mientras que `miAnd2` utiliza una expresión `if-then-else`.
-
+```haskell
 miAnd True True = True
 miAnd _ _ = False
 
@@ -339,7 +339,7 @@ miAnd2 x y =
     if x == True && y == True
        then True
        else False
-
+```
 El uso de *Pattern Matching* resulta más simple y legible, ya que permite describir directamente los casos posibles sin necesidad de escribir condiciones adicionales. Además, el código es más declarativo, ya que se especifica qué resultado corresponde a cada patrón de entrada.
 
 Por otro lado, la versión tradicional puede resultar más familiar para quienes provienen de lenguajes imperativos, aunque suele requerir expresiones más extensas para resolver el mismo problema.
